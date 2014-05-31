@@ -9,9 +9,9 @@ Movie::Movie(){ // default movie which is a comedy.
 
 }
 Movie::Movie(string new_title, string new_genre, int new_showtime){
-	new_title = title;
-	new_genre = genre;
-	new_showtime = showtime;
+	title = new_title;
+	genre = new_genre;
+	showtime = new_showtime;
 }
 string Movie::GetTitle(){ //allows you to get name of movie
 	return title;

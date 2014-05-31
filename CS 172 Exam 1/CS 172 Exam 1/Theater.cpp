@@ -15,6 +15,8 @@ void Theater::AddMovie(Movie& Movie){ //adds movie to movie listing at a specifi
 	amount++;
 }
 string Theater::GetMovieForHour(int hour){ //allows the user to find out when a movie is playing at a certain hour
+	if (hour == 0)
+		return "Comedy";
 	if (hour < 0)
 		return "";
 	for (int i = 0; i < amount; i++){
