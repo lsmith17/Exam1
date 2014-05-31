@@ -9,7 +9,8 @@ Theater::Theater(string new_name, string new_telephone){ //allows the user to en
 	telephone = new_telephone;
 	amount = 0;
 }
-void Theater::AddMovie(Movie& Movie){ //adds movie to movie listing
+
+void Theater::AddMovie(Movie& Movie){ //adds movie to movie listing at a specific hour
 	M[amount] = Movie;
 	amount++;
 }
@@ -20,14 +21,14 @@ string Theater::GetMovieForHour(int hour){ //allows the user to find out when a 
 		if (M[i].GetShowtime() >= hour)
 			return M[i].GetTitle();
 	}
+	return "";  // returns blank if nothing is showing
 }
 int Theater::GetShowTimeForGenre(string new_genre){ //allows user to find out when a certain genre is playing
 	for (int i = 0; i < amount; i++){
-		if (M[i].GetGenre() == new_genre){
+		if (M[i].GetGenre() == new_genre)
 			return M[i].GetShowtime();
-		}
-		return -1;
 	}
+	return -1; // returns -1 if chosen genre doesn't exist
 }
 int Theater::GetPopcornPrice(){ // gets you the price of popcorn you purchased
 	return priceofpop;

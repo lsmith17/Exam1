@@ -3,8 +3,10 @@
 #include"Movie.h"
 
 Movie::Movie(){ // default movie which is a comedy.
-	title = "The Longest Yard";
+	title = "Longest Yard";
 	genre = "Comedy";
+	showtime = 0;
+
 }
 Movie::Movie(string new_title, string new_genre, int new_showtime){
 	new_title = title;
